@@ -66,7 +66,7 @@ struct SlackStatusCardView: View {
                     .shadow(radius: 12)
                     .overlay(
                         VStack {
-                            if status.active_incidents.count > 0 {
+                            if status.activeIncidents.count > 0 {
                                 Image(systemName: "exclamationmark.icloud.fill")
                                     .font(.system(size: 29))
                                     .foregroundColor(Color("nord11"))
@@ -97,9 +97,9 @@ struct SlackStatusCardView: View {
                                 .padding(.top, 3)
                             Spacer()
                         }
-                        if status.active_incidents.count > 0 {
+                        if status.activeIncidents.count > 0 {
                             Divider().padding(.horizontal, 20)
-                            ForEach(status.active_incidents) { incidents in
+                                ForEach(status.activeIncidents) { incidents in
                                 VStack {
                                     AffectedServiceStatusView(string: "Type:", status: incidents.type)
                                     AffectedServiceStatusView(string: "Start Date:", status: incidents.date_created)

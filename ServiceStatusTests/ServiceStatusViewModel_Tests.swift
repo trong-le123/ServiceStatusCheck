@@ -5,7 +5,8 @@ import XCTest
 
 class ServiceStatusViewModel_Tests: XCTestCase {
     let vm = ServiceStatusViewModel()
-    
+    let mockNetworkManager = NetworkMock()
+        
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -14,19 +15,32 @@ class ServiceStatusViewModel_Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func test_ServiceStatusViewModel_FetchSlackStatus_shouldReturnTrue() throws {
+    func test_ServiceStatusViewModel_FetchSlackStatus_shouldReturnTrue() async throws {
+        let mockViewModel = ServiceStatusViewModel(networkManager: mockNetworkManager)
+        let mockedResponse = await mockViewModel.fetchSlackSystemStatus()
         
+        XCTAssertNotNil(mockedResponse)
+        
+        let getFirstResponseItem = mockedResponse.first
+        
+        XCTAssertEqual(getFirstResponseItem?.status, "ok")
+        XCTAssertEqual(getFirstResponseItem?.dateCreated, "2018-09-07T18:34:15-07:00")
+        XCTAssertEqual(getFirstResponseItem?.dateUpdated, "2018-09-07T18:34:15-07:00")
+
     }
     
-    struct MockSlackStatusResponse {
-        let mockSlackStatusResponse = """
-        {
-            "status":"ok",
-            "date_created":"2022-03-24T14:23:10-07:00",
-            "date_updated":"2022-03-24T14:23:10-07:00",
-            "active_incidents":[]
-        }
-        """
-    }
+    func test_ServiceStatusViewModel_FetchGithubStatus_shouldReturnTrue() async throws {
+        let mockViewModel = ServiceStatusViewModel(networkManager: mockNetworkManager)
+        let mockedResponse = await mockViewModel.fetchGithubSystemStatus()
+        
+        XCTAssertNotNil(mockedResponse)
+        
+        let getFirstResponseItem = mockedResponse.first
 
+        XCTAssertEqual(getFirstResponseItem?.status, "partial_outage")
+        XCTAssertEqual(getFirstResponseItem?.name, "API Requests")
+        XCTAssertEqual(getFirstResponseItem?.description, "Requests for GitHub APIs")
+
+
+    }
 }

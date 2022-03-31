@@ -14,6 +14,7 @@
 		EF623BB827F3951E00E130C6 /* Service_StatusUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF623BB727F3951E00E130C6 /* Service_StatusUITestsLaunchTests.swift */; };
 		EF623BC527F3974800E130C6 /* ServiceStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF623BC427F3974800E130C6 /* ServiceStatusViewModel.swift */; };
 		EF623BC827F4A26600E130C6 /* ServiceStatusViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF623BC727F4A26600E130C6 /* ServiceStatusViewModel_Tests.swift */; };
+		EF623BCA27F54E8500E130C6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF623BC927F54E8500E130C6 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		EF623BB727F3951E00E130C6 /* Service_StatusUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service_StatusUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		EF623BC427F3974800E130C6 /* ServiceStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusViewModel.swift; sourceTree = "<group>"; };
 		EF623BC727F4A26600E130C6 /* ServiceStatusViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceStatusViewModel_Tests.swift; sourceTree = "<group>"; };
+		EF623BC927F54E8500E130C6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				EF623B9C27F3951B00E130C6 /* ServiceStatusView.swift */,
 				EF623BC427F3974800E130C6 /* ServiceStatusViewModel.swift */,
 				EF623B9E27F3951D00E130C6 /* Assets.xcassets */,
+				EF623BC927F54E8500E130C6 /* NetworkManager.swift */,
 			);
 			path = ServiceStatus;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF623BCA27F54E8500E130C6 /* NetworkManager.swift in Sources */,
 				EF623B9D27F3951B00E130C6 /* ServiceStatusView.swift in Sources */,
 				EF623B9B27F3951B00E130C6 /* ServiceStatusApp.swift in Sources */,
 				EF623BC527F3974800E130C6 /* ServiceStatusViewModel.swift in Sources */,
